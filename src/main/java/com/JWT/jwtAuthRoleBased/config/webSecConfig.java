@@ -32,6 +32,7 @@ public class webSecConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/auth")
                 .permitAll()
+                .antMatchers("/home").hasAuthority("ROLE_CUSTOMER")
                 .anyRequest()
                 .authenticated()
                 .and()
